@@ -29,7 +29,7 @@ class GameObject {
     }
     
     destroy() {
-        console.log(`${this.name} was removed from the game.`)
+        return `${this.name} was removed from the game.`
     }
 }
 
@@ -41,7 +41,7 @@ class CharacterStats extends GameObject {
     }
     
     takeDamage() {
-        console.log(`${this.name} took damage`);
+        return `${this.name} took damage`;
     }
 }
 
@@ -54,7 +54,7 @@ class Humanoid extends CharacterStats {
         this.language = childAttributes.language;
     }
     greet() {
-        console.log(`${this.name} offers a greeting in ${this.language}`);
+        return `${this.name} offers a greeting in ${this.language}`;
     }
 }
 
