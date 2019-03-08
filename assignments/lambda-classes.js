@@ -47,21 +47,24 @@ class Student extends Person {
     
     constructor(object) {
         super(object);
-        this.previousBackground = object.previousBackground,
-        this.className = object.className,
-        this.favSubjects = object.favSubjects
+        this.previousBackground = object.previousBackground;
+        this.className = object.className;
+        this.favSubjects = object.favSubjects;
     }
     
     listsSubjects() {
         //a method that logs out all of the student's favoriteSubjects one by one.
+        console.log(this.favSubjects);
     } 
     
-    PRAssignment() {
+    PRAssignment(subject) {
         //a method that receives a subject as an argument and logs out that the student.name has submitted a PR for {subject}
+        console.log(`${this.name} has submitted a PR for {subject}`);
     } 
 
-    sprintChallenge() {
+    sprintChallenge(subject) {
         //similar to PRAssignment but logs out student.name has begun sprint challenge on {subject}
+        console.log(`${this.name} has begun the sprint challenge on ${subject}`);
     }   
 }
 
@@ -73,15 +76,17 @@ class ProjectManager extends Instructor {
         this.favInstructor = object.favInstructor;
     }
     
-    standUp() {
+    standUp(channel) {
         //a method that takes in a slack channel and logs `{name} announces to {channel}, @channel standy times!
+        console.log(`${this.name} announces to the ${channel}, @${channel} study times!`);
     }
     
-    debugsCode() {
+    debugsCode(student,subject) {
         //a method that takes in a student object and a subject and logs out {name} debugs {student.name}'s code on {subject}
+        console.log(`${this.name} debugs {student.name}'s code on {subject}`);
     }
-    
 }
+
 
 
 
