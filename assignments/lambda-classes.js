@@ -50,6 +50,7 @@ class Student extends Person {
         this.previousBackground = object.previousBackground;
         this.className = object.className;
         this.favSubjects = object.favSubjects;
+        this.grade = object.grade;
     }
     
     listsSubjects() {
@@ -83,9 +84,20 @@ class ProjectManager extends Instructor {
     
     debugsCode(student,subject) {
         //a method that takes in a student object and a subject and logs out {name} debugs {student.name}'s code on {subject}
-        console.log(`${this.name} debugs {student.name}'s code on {subject}`);
+        console.log(`${this.name} debugs ${student.name}'s code on ${subject}`);
     }
 }
+
+
+//testing statements
+const Johnny = new ProjectManager({name: 'Johnny',favInstructor: 'Josh Knell'});
+console.log(Johnny);
+Johnny.debugsCode({name:'Amir'},'javascript');
+const Amir = new Student({name: 'Yunas'});
+console.log(Amir);
+
+Amir.sprintChallenge('javascript I');
+
 
 
 
