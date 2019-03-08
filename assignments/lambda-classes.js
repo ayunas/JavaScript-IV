@@ -38,10 +38,13 @@ class Instructor extends Person {
     grade(student,subject) {
         return `'${student.name} receives a perfect score on ${subject}`;
     }
+    
+    tutor(student) {
+        const gradeIncrease = Math.ceil(Math.random()*20);
+        student.grade += gradeIncrease;
+        console.log(`${this.name} has helped ${student.name} improve their grade by ${gradeIncrease} points!`);
+    }
 }
-
-const Josh = new Instructor({name: 'Josh',specialty: 'coding', favLanguage: 'JS', catchPhrase: 'Don\'t forget the homies'});
-
 
 class Student extends Person {
     
@@ -50,7 +53,7 @@ class Student extends Person {
         this.previousBackground = object.previousBackground;
         this.className = object.className;
         this.favSubjects = object.favSubjects;
-        this.grade = object.grade;
+        this.grade = Math.ceil(Math.random()*100);
     }
     
     listsSubjects() {
@@ -66,7 +69,14 @@ class Student extends Person {
     sprintChallenge(subject) {
         //similar to PRAssignment but logs out student.name has begun sprint challenge on {subject}
         console.log(`${this.name} has begun the sprint challenge on ${subject}`);
-    }   
+    }
+    
+    graduate() {
+        if (this.grade >= 70) {
+            console.log(`Congratulations, ${this.name} has graduated Lambda School!`);
+        } else { console.log(`Unfortunately, ${this.name} did not score high enough to graduate Lambda School.`);}
+    }
+    
 }
 
 class ProjectManager extends Instructor {
@@ -93,10 +103,14 @@ class ProjectManager extends Instructor {
 const Johnny = new ProjectManager({name: 'Johnny',favInstructor: 'Josh Knell'});
 console.log(Johnny);
 Johnny.debugsCode({name:'Amir'},'javascript');
-const Amir = new Student({name: 'Yunas'});
+const Amir = new Student({name: 'Amir'});
 console.log(Amir);
 
 Amir.sprintChallenge('javascript I');
+Amir.graduate();
+const Josh = new Instructor({name: 'Josh',specialty: 'coding', favLanguage: 'JS', catchPhrase: 'Don\'t forget the homies'});
+console.log(Josh);
+Josh.tutor(Amir);
 
 
 
