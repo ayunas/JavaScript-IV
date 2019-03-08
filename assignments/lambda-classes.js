@@ -43,7 +43,45 @@ class Instructor extends Person {
 const Josh = new Instructor({name: 'Josh',specialty: 'coding', favLanguage: 'JS', catchPhrase: 'Don\'t forget the homies'});
 
 
+class Student extends Person {
+    
+    constructor(object) {
+        super(object);
+        this.previousBackground = object.previousBackground,
+        this.className = object.className,
+        this.favSubjects = object.favSubjects
+    }
+    
+    listsSubjects() {
+        //a method that logs out all of the student's favoriteSubjects one by one.
+    } 
+    
+    PRAssignment() {
+        //a method that receives a subject as an argument and logs out that the student.name has submitted a PR for {subject}
+    } 
 
+    sprintChallenge() {
+        //similar to PRAssignment but logs out student.name has begun sprint challenge on {subject}
+    }   
+}
+
+class ProjectManager extends Instructor {
+    
+    constructor(object) {
+        super(object);
+        this.gradClassName = object.gradClassName;
+        this.favInstructor = object.favInstructor;
+    }
+    
+    standUp() {
+        //a method that takes in a slack channel and logs `{name} announces to {channel}, @channel standy times!
+    }
+    
+    debugsCode() {
+        //a method that takes in a student object and a subject and logs out {name} debugs {student.name}'s code on {subject}
+    }
+    
+}
 
 
 
